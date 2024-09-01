@@ -33,4 +33,7 @@ class Hero:
     self.attack_power = random.randint(1, 20)
     print(f"Остаток здоровья {other.name} после атаки = {other.health}.")
     print(f"Сила удара следующего хода {self.name} = {self.attack_power}.")
-  
+
+  def is_alive(self):
+    if self.health > 0:
+      return True
