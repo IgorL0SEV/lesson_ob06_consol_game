@@ -49,4 +49,27 @@ class Game:
     self.player = Hero (player_name, 100, 20)
     self.computer = Hero ("Computer", 100, 20)
 
-    
+  def start(self):
+    print("Начало игры!\n")
+    print(
+      f"Игрок {self.player.name}:\nЗдоровье = {self.player.health} единиц.\nСила удара = {self.player.attack_power} единиц.\n")
+    print(
+      f"Игрок {self.computer.name}:\nЗдоровье = {self.computer.health} единиц.\nСила удара = {self.computer.attack_power} единиц.\n")
+
+    while self.player.is_alive() and self.computer.is_alive():
+
+      # Игрок атакует компьютер
+      print(f"В атаку! Игрок {self.player.name} атакует {self.computer.name}!")
+      self.player.attack(self.computer)
+      if not self.computer.is_alive():
+        print(f"\nУРА!!!\n{self.player.name} победил {self.computer.name}!!!")
+        break
+      self.player.info_health(self.computer)
+
+      # Компьютер атакует игрока
+      print(f"Внимание! Игрок {self.computer.name} атакует {self.player.name}!")
+      self.computer.attack(self.player)
+      if not self.player.is_alive():
+        print(f"\nУвы!\n{self.player.name} проиграл {self.computer.name}!\nУдачи в следующих сражениях!!!")
+        break
+      self.computer.info_health(self.player)
