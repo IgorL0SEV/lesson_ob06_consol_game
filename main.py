@@ -42,3 +42,11 @@ class Hero:
     print()
     print(f"Игрок {self.name}:\nЗдоровье = {self.health} единиц.\nСила удара = {self.attack_power} единиц.\n")
     print(f"Игрок {other.name}:\nЗдоровье = {other.health} единиц.\nСила удара = {other.attack_power} единиц.\n")
+
+
+class Game:
+  def __init__(self, player_name):
+    self.player = Hero (player_name, 100, 20)
+    self.computer = Hero ("Computer", 100, 20)
+
+    
