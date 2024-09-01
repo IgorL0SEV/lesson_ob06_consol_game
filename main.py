@@ -78,4 +78,3 @@ if __name__ == "__main__":
   player_name = "Ivan" #input ("Введите имя своего игрока :")
   game = Game(player_name)
   game.start()
-  
