@@ -37,3 +37,8 @@ class Hero:
   def is_alive(self):
     if self.health > 0:
       return True
+
+  def info_health(self, other):
+    print()
+    print(f"Игрок {self.name}:\nЗдоровье = {self.health} единиц.\nСила удара = {self.attack_power} единиц.\n")
+    print(f"Игрок {other.name}:\nЗдоровье = {other.health} единиц.\nСила удара = {other.attack_power} единиц.\n")
