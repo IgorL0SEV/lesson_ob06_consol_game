@@ -26,3 +26,11 @@ class Hero:
     self.health = health
     self.attack_power = attack_power
 
+  def attack(self, other):
+    # print (f"Остаток здоровья {other.name} перед атакой = {other.health}.")
+    print(f"Сила удара {self.name} = {self.attack_power}")
+    other.health -= self.attack_power
+    self.attack_power = random.randint(1, 20)
+    print(f"Остаток здоровья {other.name} после атаки = {other.health}.")
+    print(f"Сила удара следующего хода {self.name} = {self.attack_power}.")
+  
